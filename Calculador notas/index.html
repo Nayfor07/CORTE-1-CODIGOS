@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Nota Necesaria</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos (opcional pero recomendado) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card-container">
+        <div class="calculator-card">
+            <h1>Calculadora de Nota Necesaria</h1>
+            <p class="subtitle">Calcula qué nota necesitas en el último corte (40%) para alcanzar un 3.0 final.</p>
+
+            <div class="form-group">
+                <label for="notaCorte1"><i class="fas fa-book-open icon"></i> Nota Corte 1 (30%):</label>
+                <input type="number" id="notaCorte1" min="0" max="5" step="0.1" placeholder="Ej: 3.5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="notaCorte2"><i class="fas fa-edit icon"></i> Nota Corte 2 (30%):</label>
+                <input type="number" id="notaCorte2" min="0" max="5" step="0.1" placeholder="Ej: 4.0" required>
+            </div>
+
+            <button id="calcularBtn" class="calculate-button">
+                <i class="fas fa-calculator icon"></i> Calcular Nota Necesaria
+            </button>
+
+            <!-- Área de Resultado con clases dinámicas -->
+            <div id="resultado" class="resultado-placeholder">
+                <!-- El resultado se mostrará aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

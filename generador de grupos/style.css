@@ -1,0 +1,101 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#fileInputLabel {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    width: fit-content;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 10px auto;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#listaNombres, #gruposGenerados {
+    margin-top: 20px;
+}
+
+#tablaNombres {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#tablaNombres th, #tablaNombres td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#tablaNombres th {
+    background-color: #f2f2f2;
+}
+
+#listaGrupos { /* Eliminar estilos de lista */
+    padding: 0;
+}
+
+.grupo-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.grupo-titulo {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.grupo-persona {
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    display: block; /* Para que ocupe todo el ancho */
+}
+
+.mujer {
+    background-color: #FFB6C1; /* Rosado */
+}
+
+.hombre {
+    background-color: #ADD8E6; /* Azul */
+}

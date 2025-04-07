@@ -1,0 +1,188 @@
+/* --- General Styles & Fonts --- */
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente más moderna */
+    /* Fondo con degradado sutil */
+    background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    padding: 20px; /* Espacio por si el contenedor es muy grande */
+    box-sizing: border-box;
+}
+
+/* --- Card Container --- */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.calculator-card {
+    background-color: #fff;
+    padding: 30px 40px; /* Más padding */
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    width: 100%;
+    max-width: 450px; /* Ancho máximo */
+    text-align: center;
+    border-top: 5px solid #007bff; /* Borde superior decorativo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto sutil al pasar el mouse sobre la tarjeta */
+.calculator-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Headings and Text --- */
+h1 {
+    color: #0056b3; /* Azul más oscuro */
+    margin-bottom: 10px;
+    font-weight: 600; /* Más grueso */
+}
+
+.subtitle {
+    color: #555;
+    font-size: 0.9em;
+    margin-bottom: 30px;
+}
+
+/* --- Form Elements --- */
+.form-group {
+    margin-bottom: 20px; /* Más espacio */
+    text-align: left; /* Alineación de etiquetas e inputs */
+}
+
+label {
+    display: flex; /* Para alinear icono y texto */
+    align-items: center;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: 400; /* Peso normal */
+    font-size: 0.95em;
+}
+
+.icon {
+    margin-right: 8px; /* Espacio entre icono y texto */
+    color: #007bff; /* Color del icono */
+    width: 16px; /* Ancho fijo para alineación */
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px 15px; /* Más padding interno */
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Bordes redondeados */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Heredar fuente */
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #007bff; /* Borde azul al enfocar */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Sombra exterior suave */
+    outline: none; /* Quitar borde por defecto del navegador */
+}
+
+/* --- Button --- */
+.calculate-button {
+    background: linear-gradient(to right, #007bff, #0056b3); /* Degradado azul */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.05em; /* Ligeramente más grande */
+    font-weight: 600;
+    width: 100%; /* Ocupar todo el ancho */
+    margin-top: 10px; /* Espacio antes del botón */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex; /* Para alinear icono y texto */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.calculate-button .icon {
+    color: white; /* Icono blanco en el botón */
+    margin-right: 8px;
+}
+
+.calculate-button:hover {
+    background: linear-gradient(to right, #0056b3, #004085); /* Degradado más oscuro */
+    transform: translateY(-2px); /* Efecto levantar */
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+.calculate-button:active {
+     transform: translateY(0); /* Efecto presionar */
+     box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+/* --- Result Area --- */
+.resultado-placeholder {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: 400; /* Peso normal */
+    font-size: 0.95em;
+    text-align: center;
+    min-height: 50px; /* Altura mínima para mantener el espacio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent; /* Borde inicial transparente */
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+    line-height: 1.5;
+}
+
+/* Estado por defecto o informativo */
+.resultado.info {
+    background-color: #e7f3ff; /* Azul claro */
+    border-color: #b3d7ff; /* Borde azul */
+    color: #004085; /* Texto azul oscuro */
+}
+.resultado.info::before {
+    font-family: "Font Awesome 6 Free"; font-weight: 900; content: "\f05a"; /* Icono info */
+    margin-right: 10px;
+}
+
+/* Estado de éxito */
+.resultado.success {
+    background-color: #d4edda; /* Verde claro */
+    border-color: #c3e6cb; /* Borde verde */
+    color: #155724; /* Texto verde oscuro */
+}
+.resultado.success::before {
+    font-family: "Font Awesome 6 Free"; font-weight: 900; content: "\f058"; /* Icono check circle */
+    margin-right: 10px;
+}
+
+/* Estado de advertencia (imposible alcanzar) */
+.resultado.warning {
+    background-color: #fff3cd; /* Amarillo claro */
+    border-color: #ffeeba; /* Borde amarillo */
+    color: #856404; /* Texto amarillo/marrón oscuro */
+}
+.resultado.warning::before {
+    font-family: "Font Awesome 6 Free"; font-weight: 900; content: "\f071"; /* Icono warning */
+    margin-right: 10px;
+}
+
+/* Estado de error (input inválido) */
+.resultado.error {
+    background-color: #f8d7da; /* Rojo claro */
+    border-color: #f5c6cb; /* Borde rojo */
+    color: #721c24; /* Texto rojo oscuro */
+}
+.resultado.error::before {
+    font-family: "Font Awesome 6 Free"; font-weight: 900; content: "\f06a"; /* Icono exclamation circle */
+    margin-right: 10px;
+}

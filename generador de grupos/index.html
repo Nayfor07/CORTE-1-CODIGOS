@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Grupos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Grupos</h1>
+
+        <input type="file" id="fileInput" accept=".csv" style="display: none;">
+        <label for="fileInput" id="fileInputLabel">Seleccionar Archivo CSV</label>
+
+        <div id="listaNombres">
+            <h2>Lista de Nombres</h2>
+            <table id="tablaNombres">
+                <thead>
+                    <tr></tr>
+                        <th>Nombre</th>
+                        <th>Sexo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <button id="generarButton" disabled>Generar Grupos</button>
+
+        <div id="gruposGenerados">
+            <h2>Grupos Generados</h2>
+            <div id="listaGrupos"> <!-- Cambiado a div para mayor flexibilidad -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</body>
+</html>

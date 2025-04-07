@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Votación Escolar Moderno</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Opcional: Íconos (ejemplo con Font Awesome) -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- MODO CONFIGURACIÓN -->
+        <div id="setup-mode">
+            <header class="section-header">
+                <h1>Configuración del Sistema de Votación</h1>
+            </header>
+
+            <div class="setup-section institution-section">
+                <label for="school-name">Nombre de la Institución Educativa:</label>
+                <input type="text" id="school-name" placeholder="Ej: Colegio El Progreso">
+            </div>
+
+            <div class="setup-section candidate-registration-section">
+                <h2>Registrar Nuevo Candidato</h2>
+                <form id="candidate-form">
+                    <div class="form-grid">
+                        <div>
+                            <label for="candidate-name">Nombre Completo:</label>
+                            <input type="text" id="candidate-name" required>
+                        </div>
+                        <div>
+                            <label for="candidate-grade">Grado:</label>
+                            <input type="text" id="candidate-grade" required>
+                        </div>
+                        <div class="photo-upload-area">
+                             <label for="candidate-photo">Foto del Candidato:</label>
+                             <input type="file" id="candidate-photo" accept="image/*" required>
+                             <img id="photo-preview" src="#" alt="Vista previa" class="photo-preview-setup hidden"/>
+                        </div>
+                        <div class="proposals-area">
+                            <label for="candidate-proposals">Propuestas (una por línea):</label>
+                            <textarea id="candidate-proposals" rows="4" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-add">
+                        <!-- <i class="fas fa-user-plus"></i> --> Agregar Candidato
+                    </button>
+                </form>
+            </div>
+
+             <div class="setup-section registered-candidates-section">
+                 <h2>Candidatos Registrados (<span id="candidate-count">0</span>)</h2>
+                 <div id="registered-candidates-list" class="candidate-preview-container">
+                     <!-- Las tarjetas de vista previa de candidatos se agregarán aquí -->
+                     <p id="no-candidates-message">Aún no se han registrado candidatos.</p>
+                 </div>
+             </div>
+
+            <div class="action-section">
+                <button id="start-voting-btn" class="btn btn-principal btn-start-vote">
+                    <!-- <i class="fas fa-check-double"></i>  -->
+                    Completar Configuración e Iniciar Votación
+                </button>
+            </div>
+        </div>
+
+        <!-- MODO VOTACIÓN -->
+        <div id="voting-mode" class="hidden">
+             <header class="section-header">
+                <h1 id="voting-school-name"></h1>
+                <h2>Votación para Personero Estudiantil</h2>
+            </header>
+            <p class="instructions">Selecciona tu candidato preferido haciendo clic en "Votar". Puedes ver sus propuestas antes.</p>
+
+            <div id="candidate-list" class="candidate-container">
+                <!-- Los candidatos se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+
+        <!-- MENÚ POST-VOTACIÓN -->
+        <div id="post-vote-menu" class="hidden status-message">
+            <h2><span class="icon">✅</span> ¡Gracias por tu voto!</h2>
+            <p>Tu voto ha sido registrado.</p>
+            <div class="action-buttons">
+                <button id="vote-again-btn" class="btn btn-secondary"> <!-- <i class="fas fa-vote-yea"></i> --> Registrar Otro Voto</button>
+                <button id="finish-voting-btn" class="btn btn-principal"> <!-- <i class="fas fa-flag-checkered"></i> --> Terminar Conteo y Ver Resultados</button>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE RESULTADOS -->
+        <div id="results-section" class="hidden">
+             <header class="section-header">
+                 <h1>Resultados Finales</h1>
+                 <h2 id="results-school-name"></h2>
+             </header>
+            <ul id="results-list">
+                <!-- Los resultados se cargarán aquí -->
+            </ul>
+             <button id="reset-system-btn" class="btn btn-danger"> <!-- <i class="fas fa-redo"></i> --> Reiniciar Sistema (Nueva Votación)</button>
+        </div>
+
+        <!-- MODAL PARA PROPUESTAS -->
+        <div id="proposal-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">×</span>
+                <h3 id="modal-candidate-name"></h3>
+                <h4>Propuestas:</h4>
+                <ul id="modal-proposals-list"></ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
